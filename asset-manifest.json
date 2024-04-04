@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/ecommerce/static/css/main.b8bd4cb6.css",
+    "main.js": "/ecommerce/static/js/main.95b36ac1.js",
+    "static/media/pin_12.jpg": "/ecommerce/static/media/pin_12.e587e57ee3d8fab0260d.jpg",
+    "static/media/Signin-pana.png": "/ecommerce/static/media/Signin-pana.76d77f6c8e03280a6bf7.png",
+    "static/media/Signup-pana.png": "/ecommerce/static/media/Signup-pana.5599d5638e5d3be04170.png",
+    "static/media/042.png": "/ecommerce/static/media/042.86ebb46830c38725d19b.png",
+    "service-worker.js": "/ecommerce/service-worker.js",
+    "static/media/NoConnection-bro.svg": "/ecommerce/static/media/NoConnection-bro.7bde56e64f094b6716a8db9bb3cb43bb.svg",
+    "index.html": "/ecommerce/index.html",
+    "main.b8bd4cb6.css.map": "/ecommerce/static/css/main.b8bd4cb6.css.map",
+    "main.95b36ac1.js.map": "/ecommerce/static/js/main.95b36ac1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8bd4cb6.css",
+    "static/js/main.95b36ac1.js"
+  ]
+}
