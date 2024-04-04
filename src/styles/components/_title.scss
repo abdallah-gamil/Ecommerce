@@ -1,0 +1,18 @@
+
+
+
+
+.title {
+    text-transform: capitalize;
+    font-size: 25px;
+    color: $text-color;
+    margin: 40px 0px;
+    &::after{
+        content: '';
+        display: block;
+        width: 150px;
+        height: 4px;
+        background: $mainColor;
+        border-radius: 5px;
+    }
+}

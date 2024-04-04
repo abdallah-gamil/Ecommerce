@@ -1,0 +1,17 @@
+
+
+// function takes size as (px) and convert it to (rem)
+@function pxToRem($pxValue) {
+    @return ($pxValue / 16) + rem ;
+}
+
+// summation function takes multi value and return sum of them
+@function sum($numbers...) {
+    $sum: 0;
+    @each $number in $numbers {
+      $sum: $sum + $number;
+    }
+    @return $sum;
+}
+
+

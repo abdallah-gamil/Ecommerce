@@ -1,0 +1,27 @@
+
+
+.paginate {
+    width: fit-content;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    li {
+        a {
+            color: $mainColor;
+        }
+        margin-right: 10px;
+        cursor: pointer;
+        &.next , &.previous {
+            padding: 7px 12px;
+            border-radius: 3px;
+            background-color: $bgColor;
+        }
+        &.selected {
+            a {
+                color: $darkColor;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}

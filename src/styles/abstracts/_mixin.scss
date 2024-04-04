@@ -1,0 +1,100 @@
+@mixin tablet {
+    @media screen and (max-width: 757px) {
+        @content;
+    }
+}
+
+@mixin mediumScreen {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin largeScreen {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 575px) {
+        @content;
+    }
+}
+
+
+@mixin devices ($breakpoint) { //the name of the mixin is devices
+  
+    @if $breakpoint == tablet {    
+       @media only screen and (max-width: 757px) {
+          @content;
+       }
+    }
+ 
+    @if $breakpoint == mobile {
+       @media only screen and (max-width: 575px) {
+          @content;
+       }
+    }
+}
+
+
+@mixin bg-img($url,$fixed : false) {
+    background: url($url) no-repeat;
+    background-position: center;
+    background-size: cover;
+    @if $fixed != false {
+        background-attachment: fixed;
+    }
+}
+
+@mixin overlay($z-index, $bg-color, $rgp) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($bg-color, $alpha: $rgp);
+    z-index: $z-index;
+}
+
+;
+// property prefixes
+@mixin prefixes($property, $value, $prefixes-list) {
+    @each $prefix in $prefixes-list {
+        -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}:$value;
+}
+
+;
+// reSetting a(anchor)
+@mixin reSetting-a($size, $color) {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $size;
+    color: $color;
+}
+
+
+// animation key with prefixes
+@mixin keyAnimation($keyName) {
+    @each $prefix in $prefixes-list {
+        -#{$prefix}-keyframes #{$keyName} {
+            @content;
+        };
+    };
+    @keyframes #{$keyName}{
+        @content;
+    };
+    
+};
+
+@mixin boxWidth($countOfBoxes,$statusVw : fullVw) {
+    @if $statusVw == tablet or $statusVw == mobile {
+        width: calc((100% / $countOfBoxes) - 0px);
+    }
+    @else{
+        width: calc((100% / $countOfBoxes) - 20px);
+    }
+}

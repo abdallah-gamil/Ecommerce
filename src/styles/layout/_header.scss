@@ -1,0 +1,165 @@
+
+
+.header {
+    position: sticky;
+    z-index: 1111;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $bgColor;
+    padding: 15px 0px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 4px $secondColor;
+    &__logo {
+        color: $blackColor;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 20px;
+        width: 140px;
+    }
+    &__navBar {
+        @extend .row;
+        column-gap: 20px;
+        position: relative;
+        &--link {
+            @include reSetting-a(16px,$darkColor);
+            cursor: pointer;
+            transition: 200ms ease-in-out;
+            color: $text-color;
+            position: relative;
+            .cartLength {
+                display: block;
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                background-color: $mainColor;
+                font-size: 14px;
+                color: #fff;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: -13px;
+                right: -10px;
+            }
+            &:hover {
+                color: $blackColor;
+            }
+            &.active {
+                color: $blackColor;
+            }
+        }
+        &--products {
+            width: 300px;
+            max-height: 500px;
+            border-radius: 10px;
+            position: absolute;
+            top: 200%;
+            left: -50%;
+            background-color: $bgColor;
+            box-shadow: 2px 2px 8px #ddd;
+            .wrapper {
+                max-height: inherit;
+            }
+            .item {
+                @extend .row;
+                column-gap: 10px;
+                margin-bottom: 10px;
+                box-shadow: 0px 2px 4px #ddd;
+                position: relative;
+                padding: 5px;
+                &:last-child{
+                    margin-bottom: 0px;
+                    box-shadow: 0px 0px 0px #ddd;
+                }
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+            }
+        }
+        &--close {
+            display: none;
+        }
+        // responsive navBar
+        @include devices(mobile) {
+            position: fixed;
+            top: 0;
+            right: -200%;
+            width: 300px;
+            height: 100vh;
+            padding: 100px 20px 0px 20px;
+            background-color: $bgColor;
+            flex-direction: column;
+            row-gap: 20px;
+            transition: all 300ms ease-in-out;
+            display: none;
+            &.active_nav {
+                display: flex;
+                animation: openNav 300ms ease-in-out;
+                right: 0%;
+            }
+            &--link {
+                .cartLength {
+                    top: -10px;
+                    right: 0;
+                    left: 35px;
+                }
+            }
+            &--products {
+                position:static;
+                width: auto;
+                max-height: 350px;
+                border-radius: 0px;
+            }
+            &--close {
+                display: block;
+                top: 20px;
+                right: 100%;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid $mainColor;
+            }
+        }
+    }
+    &__openNav {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid $mainColor;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3px;
+        row-gap: 5px;
+        display: none;
+        @include devices(mobile){
+            display: flex;
+        }
+        span {
+            width: 100%;
+            height: 2px;
+            background-color: $mainColor;
+        }
+    }
+}
+
+
+@keyframes openNav {
+    0% {
+        right: -200%;
+    }
+    100% {
+        right: 0%;
+    }
+}

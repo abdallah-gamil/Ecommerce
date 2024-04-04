@@ -1,0 +1,47 @@
+
+
+.ordersPage {
+    .not_found{ 
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        object-fit: cover;
+     }
+    &__ordersTable {
+        width: 100%;
+        td , th {
+            padding: 8px;
+        }
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: $mainColor;
+            color: white;
+        }
+        tr {
+            border-bottom: 1px solid #ddd;
+            transition: 150ms ease;
+            position: relative;
+            img {
+                width: 60px;
+                height: 60px;
+                border-radius: 10px;
+            }
+            &:hover {
+                background-color: #ddd;
+            }
+            &:nth-child(even){
+                background-color: #f2f2f2;
+            }
+        }
+
+        tfoot {
+            display: table-footer-group;
+            padding: 12px 0px;
+        }
+    }
+}
+
+

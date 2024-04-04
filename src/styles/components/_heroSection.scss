@@ -1,0 +1,15 @@
+
+
+.heroSection {
+    width: 100%;
+    height: calc(80vh - 60px);
+    background: url('../../../public/pin_12.jpg') no-repeat;
+    background-size:cover;
+    background-position: center;
+    @include devices(tablet) {
+        height: calc(55vh - 60px);
+    }
+    @include devices(mobile) {
+        height: calc(35vh - 60px);
+    }
+}

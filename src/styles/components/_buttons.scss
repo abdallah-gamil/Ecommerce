@@ -1,0 +1,72 @@
+
+
+.BtnControls {
+    margin: 10px 0px;
+    button{
+        all: unset;
+        cursor: pointer;
+        border: 1px solid $darkColor;
+        padding: 5px 10px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: $secondColor;
+    }
+    span {
+        padding: 10px;
+    }
+}
+
+
+.RemoveBtn {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 30px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    &:hover {
+        color: red;
+        font-weight: bold;
+    }
+}
+
+
+.viewBtn {
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    color: $darkColor;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: $mainColor;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    color: $darkColor;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: $mainColor;
+    cursor: pointer;
+    margin: 15px 0px;
+    margin-right: 10px;
+    
+    &:disabled {
+        opacity: .5;
+        cursor:no-drop;
+    }
+}
+
+.authLink {
+    text-decoration: underline;
+    text-transform: none;
+    color: royalblue;
+}
